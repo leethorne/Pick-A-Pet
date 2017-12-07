@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="text-center subhero">Update Your Info!</h1>
+    <form>
+        <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="James" ng-model="user.firstName">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Thomas" ng-model="user.lastName">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="JT@develop.com" ng-model="user.email">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Password</label>
+            <input type="password" class="form-control" ng-model="user.password">
+        </div>
+        <div class="form-group col-md-6">
+            <label>City</label>
+            <input type="text" class="form-control" placeholder="CA" ng-model="user.city">
+        </div>
+        <div class="form-group col-md-6">
+            <label>State</label>
+            <input type="text" class="form-control" placeholder="CA" ng-model="user.state">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Phone #</label>
+            <input type="text" class="form-control" ng-model="user.phone">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Seeking what type of animal?</label>
+            <input type="text" class="form-control" ng-model="user.animalTypePref" rows="5">
+        </div>
+        <button class="btn btn-success btn-lg pull-right" ng-click="updateUser()">Update</button>
+    </form>
+    <button ng-hide="true" ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>

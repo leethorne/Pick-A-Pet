@@ -1,0 +1,51 @@
+<div class="container">
+    <h1 class="hero text-center">{{ heading }}</h1><!--toggles heading according to update vs add new-->
+    <div class="row">
+        <h3 class="section-header">Adoptable Animal Information</h3>
+        <div class="form-group col-md-2">
+            <label>Type</label>
+            <input type="text" class="form-control" placeholder="Cat" ng-model="animal.animalType">
+        </div>
+        <div class="form-group col-md-8">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Mr. Barkie" ng-model="animal.animalName">
+        </div>
+        <div class="form-group col-md-2">
+            <label>Sex</label>
+            <input type="text" class="form-control" placeholder="Male" ng-model="animal.sex">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>Age</label>
+            <input type="text" class="form-control" placeholder="2 years" ng-model="animal.animalAge">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Breed</label>
+            <input type="text" class="form-control" placeholder="Husky" ng-model="animal.breed">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Weight</label>
+            <input type="text" class="form-control" placeholder="110 Lbs" ng-model="animal.weight">
+        </div>
+        <div class="form-group col-md-12">
+            <label>Center Location</label>
+            <!--drop down list of centers that are linked to the center id, in order to assign proper animal.centerId info to the animal-->
+            <select class="form-control" ng-model="animal.centerId">
+                <option value="{{ center.id }}" ng-repeat="center in centers"> {{center.centerName}} </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form group col-md-6 file-page">
+            <label>Animal Image</label>
+            <input type="file" name="filename" accept="image/*" ng-model="animal.animalImage"><!--upload file button. does not currently take in the image, but will work on the functionality-->
+            <p id="filename">Please include an image of your animal!</p>
+        </div>
+    </div>
+    <div class="row">
+        <button ng-click="addAnimal()" class="btn btn-primary btn-lg pull-right cbtn" ng-show="submitButton">Submit</button>
+        <button ng-click="updateAnimal()" class="btn btn-success btn-lg pull-right cbtn" ng-show="!submitButton">Save</button>
+    </div>
+    <button ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>

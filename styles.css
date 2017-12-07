@@ -1,0 +1,351 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 350;
+    font-family: 'Biryani', sans-serif;
+    color: #272626;
+    overflow: auto;
+    height: 100%;
+    margin-bottom: 90px;
+}
+
+/*Nav*/
+
+.custom-nav {
+    height: 90px;
+    background-color: #007C53;
+    padding: 33px;
+}
+
+.wrapper {
+    width: 99%;
+}
+
+.custom-nav-items a {
+    display: inline;
+    color: white;
+    padding: 0 20px;
+    font-size: 26px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.custom-nav-items a:hover {
+    text-decoration: none;
+    opacity: .7;
+}
+
+.custom-nav-items li {
+    display: inline;
+}
+
+.login-nav-items a {
+    color: #272626;
+    padding: 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+}
+
+.logout-nav-item a {
+    color: #272626;
+    padding: 15px;
+    margin-bottom: 15px;
+    vertical-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+}
+
+#line {
+    text-decoration: none;
+}
+
+.login-nav-items a:hover {
+    text-decoration: underline;
+}
+
+/*footer*/
+
+.custom-footer-items {
+    background-color: #007C53;
+    padding: 15px 0 20px 15px;
+    line-height: .5em;
+    color: white;
+    font-size: 14px;
+    font-weight: 400px;
+    margin-bottom: 0px;
+}
+
+footer {
+    position: baseline;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    margin-top: 40px;
+    background-color: #007C53;
+}
+
+#mailTo {
+    text-decoration: underline;
+    color: white;
+}
+
+/*general*/
+
+#myBtn {
+    /*btn on page to top*/
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #A0A0A0;
+    color: #272626;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+    color: white;
+}
+
+.home-hero {
+    font-size: 55px;
+    text-align: center;
+    margin: 35px;
+}
+
+.home-hero2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 680;
+    color: #007C53;
+    margin-top: 0px;
+    margin-bottom: 55px;
+    text-decoration: underline;
+}
+
+.section-header {
+    border-bottom: 2px black solid;
+    margin: 20px 0;
+    padding: 10px;
+    padding-left: 0;
+    color: #C40960;
+    font-weight: 600;
+}
+
+.hero {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+.subhero {
+    font-size: 30px;
+    text-align: center;
+    margin: 15px;
+}
+
+/*About*/
+
+#about {
+    line-height: 1.5em;
+    margin-bottom: 40px;
+}
+
+blockquote {
+    font-style: italic;
+    text-align: left;
+    border-color: #007C53;
+}
+
+#signature {
+    float: right;
+    margin-top: 1px;
+}
+
+#imageList {
+    margin-bottom: 40px;
+    margin-top: 25px;
+}
+
+#aboutPgAnimalImgs img {
+    height: 275px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+#contactInfo {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+/*carousel on home page*/
+
+#myCarousel {
+    height: 440px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.carousel-inner {
+    height: 440px;
+}
+
+.dog1 {
+    background: url(./images/homescreenDog4.jpg);
+    height: 440px;
+    background-position: center;
+    background-size: cover;
+}
+
+.cat1 {
+    background: url(./images/homescreenDog3.jpg);
+    height: 440px;
+    background-position: center;
+    background-size: cover;
+}
+
+.dog2 {
+    background: url(./images/homescreenDog.jpg);
+    height: 440px;
+    background-position: center;
+    background-size: cover;
+}
+
+/*Users*/
+
+.user-body {
+    margin: 30px;
+}
+
+/*Center*/
+
+#backCenter {
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+.subhero2 {
+    font-size: 20px;
+}
+
+th {
+    font-weight: 700;
+}
+
+#table-head {
+    background-color: #272626;
+    color: white;
+}
+
+/*Animal*/
+
+.backAnimal {
+    margin-bottom: 5px;
+}
+
+#backBtnLink {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.animalImage {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.animalImageView {
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.animal-container {
+    margin: 50px auto;
+}
+
+.animal-content-card {
+    border: 1px solid #A0A0A0;
+    border-radius: 10px;
+    background-color: white;
+    margin: 1%;
+    width: 31%;
+    min-height: 465px;
+}
+
+.animal-header {
+    color: #007C53;
+}
+
+.animal-heading {
+    color: #007C53;
+    margin: 12px;
+    text-align: center;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.search-section {
+    margin-bottom: 50px;
+}
+
+#filename {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+label {
+    font-weight: 999;
+}
+
+/*log in page*/
+
+#logInButton {
+    margin-bottom: 50px;
+}
+
+#errorMsg {
+    color: red;
+}
+
+/*register page*/
+
+#logLink {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+#regError {
+    font-size: 10px;
+    color: #007C53;
+    margin-top: 2px;
+}
+
+/*MAP*/
+
+#map {
+    background-color: grey;
+    border: 2px solid black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

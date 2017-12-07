@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="container" id="centerPageInfo">
+        <h1 class="hero text-center">{{ center.centerName }}</h1>
+        <div class="subhero2 text-center">
+            <p><strong>Phone: </strong>{{ center.phone }}</p>
+            <p><strong>Email: </strong>{{ center.email }}</p>
+            <p><strong>Address: </strong>{{ center.street1 }}, {{ center.street2 }}, {{ center.city }}, {{ center.state }}, {{ center.zip }}</p>
+        </div>
+        <div id="map" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}">
+            <ng-map center="{{ center.street1 }} {{ center.city }} {{ center.state }}" zoom="19">
+                <marker position="{{ center.street1 }} {{ center.city }} {{ center.state }}"></marker>
+            </ng-map>
+        </div>
+        <!--animals associated with this center's ID-->
+        <div class="row animal-section">
+            <h1 class="subhero">Adoptable animals currently available at {{center.centerName}}:</h1>
+            <!--ng-show allows us to grab animals associated with each center. linked on center controller/get animals-->
+            <div class="animal-content-card col-md-4" ng-repeat="animal in animals" ng-show="animal.centerId == center.id ">
+                <div class="animal-header">
+                    <h1 class="animal-heading" ui-sref="app.animal({id: {{ animal.id }} })"> {{ animal.animalName }} </h1>
+                    <!--click on name redirects to animal's show page-->
+                </div>
+                <div class="animal-body text-center">
+                    <img class="animalImage" src="{{animal.animalImage}}" alt="adoptable animal image">
+                    <p><strong>Age: </strong> {{ animal.animalAge }} </p>
+                    <p><strong>Breed: </strong> {{ animal.breed }} </p>
+                    <p><strong>Weight: </strong> {{ animal.weight }} </p>
+                    <p><strong>Sex: </strong> {{ animal.sex }} </p>
+                    <p><strong>Adoption Center: </strong> {{ center.centerName }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!--only shows if Admin is logged in-->
+        <button class="btn btn-success btn-lg pull-right" ng-if="currentUser.isAdmin" ui-sref="app.centerUpdate({id: {{ center.id }} })">Update</button>
+        <button class="btn btn-danger btn-lg pull-right" ng-if="currentUser.isAdmin" ng-click="deleteCenter()">Delete</button>
+        <!--travels back to center index-->
+        <button class="btn btn-default btn-lg active" id="backCenter"> <span class="glyphicon glyphicon-arrow-left"></span><a id="backBtnLink" ui-sref="app.centers"> Back to all centers</a></button>
+    </div>
+    <button ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>

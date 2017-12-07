@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h1 class="hero text-center">Find an Adoption Center near you!</h1>
+
+    <div class="row search-section">
+        <div class="form-group col-md-10">
+            <!--user can search by state to filter data | need to generate a custom filter to search by multiple properties-->
+            <input type="text" class="form-control" placeholder="Search for shelters in your state..." ng-model="userInput.state">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-warning btn-md" ng-click="applySearch()">Search for a Center</button>
+        </div>
+    </div>
+
+    <div class="row center-section">
+
+        <table class="table table-hover table-bordered table-responsive">
+            <thead id="table-head">
+                <th>Adoption Center Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+            </thead>
+            <!--ng-repeat will filter by the user's search of state. click on a particular center directs you to center show page-->
+            <tbody ng-repeat="center in centers | filter:  { state: search }" ui-sref="app.center({id: center.id})">
+                <td>{{ center.centerName }}</td>
+                <td>{{ center.email }}</td>
+                <td>{{ center.phone }}</td>
+                <td> {{ center.street1 }}</td>
+                <td> {{ center.city }} </td>
+                <td> {{ center.state }} </td>
+            </tbody>
+        </table>
+        <!--map below shows markers for all center locations. will filter markers by the user's search as well-->
+        <div id="map" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}">
+            <ng-map center="40.716, -100.971" zoom="4" style="display:block; width:auto; height:auto;">
+                <marker ng-repeat="center in centers | filter: { state: search }" position="{{ center.street1 }} {{ center.city }} {{ center.state }}" title=" {{center.centerName}} "></marker>
+            </ng-map>
+        </div>
+
+    </div>
+    <button class="btn btn-info btn-block" ng-if="currentUser.isAdmin" ui-sref="app.centerCreate">Add a new Center!</button>
+    <button ng-hide="true" ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+</div>

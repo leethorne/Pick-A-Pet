@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="hero">Adoptable Animals  </h1>
+    <div class="row search-section">
+        <div class="form-group col-md-10">
+            <!--search will filter by animal type / will need to build customer filter to add poperties-->
+            <input type="text" class="form-control" placeholder="Search a type of animal..." ng-model="userInput.animalType">
+        </div>
+        <div class="col-md-2"> 
+            <!-- search will filter on button click-->
+            <button class="btn btn-warning btn-md" ng-click="applySearch()">Search Animals</button>
+        </div>
+    </div>
+    <div class="row animal-section">
+        <div class="animal-content-card col-md-4" ng-repeat="animal in animals | filter: { animalType: search }">
+            <div class="animal-header">
+                <!--animal name click will direct you to animal show page-->
+                <h1 class="animal-heading" ui-sref="app.animal({id: {{ animal.id }} })"> {{ animal.animalName }} </h1>
+            </div>
+            <div class="animal-body text-center">
+                <img class="animalImage" src="{{animal.animalImage}}" alt="adoptable animal image">
+                <p><strong>Age: </strong> {{ animal.animalAge }} </p>
+                <p><strong>Breed: </strong> {{ animal.breed }} </p>
+                <p><strong>Weight: </strong> {{ animal.weight }} </p>
+                <p><strong>Sex: </strong> {{ animal.sex }} </p>
+                <!--dynamically links the adoption center info by comparing the animal center id to the center id-->
+                <p ng-repeat="center in centers" ng-show="animal.centerId == center.id"><strong>Adoption Center: </strong> {{ center.centerName }} </p>
+            </div>
+        </div>
+    </div> <!--end of animal section--> 
+    <button class="btn btn-info btn-block" ng-if="currentUser.isAdmin" ui-sref="app.animalCreate">Add New Animal</button><!--only displays in admin view-->
+    <button ng-click="topFunction()" id="myBtn" title="Go to top">Top</button> <!--scroll button-->
+</div> <!--end of animal container-->
+

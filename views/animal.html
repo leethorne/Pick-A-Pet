@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row animal-section text-center">
+        <div class="animal-container">
+            <div class="animal-header">
+                <h1 class="hero"> {{ animal.animalName }} </h1>
+            </div>
+            <div class="animal-body">
+                <img class="animalImageView" src="{{animal.animalImage}}" alt="Adoptable Animal Image">
+                <p><strong>Age: </strong> {{ animal.animalAge }} </p>
+                <p><strong>Breed: </strong> {{ animal.breed }} </p>
+                <p><strong>Weight: </strong> {{ animal.weight }} </p>
+                <p><strong>Sex: </strong> {{ animal.sex }} </p>
+                <!--pulls and returns the center name by comparing ids and producing center-->
+                <p ng-repeat="center in centers" ng-show="animal.centerId == center.id"><strong>Adoption Center: </strong> {{ center.centerName }} </p>
+            </div>
+            <!--shows on admin only-->
+            <button class="btn btn-success btn-lg" ng-if="currentUser.isAdmin" ui-sref="app.animalUpdate({id: {{ animal.id }} })">Update</button>
+            <button class="btn btn-danger btn-lg" ng-if="currentUser.isAdmin" ng-click="deleteAnimal()">Delete</button>
+        </div>
+        <!--end of animal container-->
+        <div id="map"></div> <!--border that shows a large line in page-->
+        <!--button to view all animals. sref on the word rather than button. didn't use history.go-1, becuase animal show page can be reached by multiple sources-->
+        <button class="backAnimal btn btn-default btn-lg active" type="button"><span class="glyphicon glyphicon-arrow-left"></span><a id="backBtnLink" ui-sref="app.animals">View all Animals</a></button>
+        <button ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+    <!--end of animal section-->
+</div>
+<!--end of container-->

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="container user-body">
+        <h1 class="text-center">{{ user.firstName }} {{user.lastName}} </h1>
+        <p><strong>Email: </strong>{{ user.email }}</p>
+        <p><strong>Phone Number: </strong>{{ user.phone }}</p>
+        <p><strong>Location: </strong> {{ user.city }}, {{  user.state }} </p>
+        <p><strong>Animal Preference: </strong>{{ user.animalTypePref }}</p>
+        <button id="updateButton" class="btn btn-info btn-md" ui-sref="app.userUpdate({id: {{ user.id }} })">Update</button>
+        <button id="deleteUserButton" class="btn btn-danger btn-md" ng-click="deleteUser()">Delete Account</button>
+    </div>
+    <button ng-hide="true" ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>

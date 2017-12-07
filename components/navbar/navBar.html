@@ -1,0 +1,18 @@
+<div class="custom-nav row">
+    <div class="wrapper">
+        <ul class="custom-nav-items">
+            <li><a ui-sref="app.home">Home</a></li>
+            <li><a ui-sref="app.about">About</a></li>
+            <li><a ui-sref="app.centers">Adoption Centers</a></li>
+            <li><a ui-sref="app.animals">Adoptable Animals</a></li>
+        <span ng-show="!userService.currentUser" >
+            <li class="login-nav-items"><a ui-sref="app.login">Login</a></li>
+            <li class="login-nav-items"><a href="#" id="line"> | </a></li>
+            <li class="login-nav-items"><a ui-sref="app.register">Register</a></li>
+        </span>
+        <span ng-show="userService.currentUser">
+             <li class="logout-nav-item"><a ng-click="logout()">Logout</a></li>
+        </span>
+        </ul>
+    </div>
+</div>

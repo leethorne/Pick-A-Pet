@@ -1,0 +1,72 @@
+<div class="container">
+    <h1 class="hero text-center">Register to use Pick-a-Pet</h1>
+
+    <form name="userForm" ng-submit="register(userForm.$valid)" novalidate>
+        <!--validating ourselves, overriding html-->
+        <div class="row">
+            <h3 class="section-header">Registration Information</h3>
+            <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.user.firstName.$invalid }">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstName" placeholder="Esteban" ng-model="user.firstName" required ng-minlength="2">
+                <p ng-show="userForm.firstName.$invalid" class="text-center help-block" id="regError">This is a required field. Please enter your first name!</p>
+            </div>
+            <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.user.lastName.$invalid }">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Murguia" ng-model="user.lastName" required ng-minlength="2">
+                <p ng-show="userForm.lastName.$invalid" class="text-center help-block" id="regError">This is a required field. Please enter your last name!</p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Phone</label>
+                <input type="text" class="form-control" placeholder="111-222-1111" ng-model="user.phone">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Date of Birth</label>
+                <input type="text" class="form-control" placeholder="06/05/1990" ng-model="user.dob">
+            </div>
+            <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.user.email.$invalid }">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="investeban@gmail.com" ng-model="user.email" required>
+                <p ng-show="userForm.email.$invalid" class="text-center help-block" id="regError">This is a required field. Please enter your email!</p>
+            </div>
+            <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.user.password.$invalid }">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" ng-model="user.password" required>
+                <p ng-show="userForm.password.$invalid" class="text-center help-block" id="regError">This is a required field. Please enter your password!</p>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="section-header">Address Information</h3>
+            <div class="form-group col-md-12">
+                <label>Street Address</label>
+                <input type="text" class="form-control" placeholder="1002 Main Street" ng-model="user.street1">
+            </div>
+            <div class="form-group col-md-12">
+                <label>Address (optional)</label>
+                <input type="text" class="form-control" placeholder="Suite #" ng-model="user.street2">
+            </div>
+            <div class="form-group col-md-4">
+                <label>City</label>
+                <input type="text" class="form-control" placeholder="Long Beach" ng-model="user.city">
+            </div>
+            <div class="form-group col-md-4">
+                <label>State</label>
+                <input type="text" class="form-control" placeholder="CA" ng-model="user.state">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Zip</label>
+                <input type="text" class="form-control" placeholder="90814" ng-model="user.zip">
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <button type="submit" ng-disabled="userForm.$invalid" ng-click="register()" class="btn btn-primary btn-lg pull-right cbtn">Submit!</button>
+    </div>
+
+    <div id="logLink">
+        <p>Already registered?</p>
+        <a class="text-center" ui-sref="app.login">Sign in here.</a>
+    </div>
+
+    <button ng-click="topFunction()" id="myBtn" title="Go to top">Top</button>
+</div>
