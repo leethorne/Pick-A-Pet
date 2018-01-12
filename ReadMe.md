@@ -7,9 +7,9 @@ This web application was designed to allows users to search for adoptable pets o
 ### Technologies
 - HTML5
 - CSS3
-- Boottrap 3
+- Bootstrap 3
 - jQuery
-- Javascript
+- JavaScript
 - AngularJS
 - Google Maps API
 - Google Fonts API
